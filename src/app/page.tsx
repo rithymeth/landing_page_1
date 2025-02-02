@@ -71,7 +71,7 @@ export default function Home() {
       </div>
       <div className="absolute top-0 left-0" style={{ zIndex: 120 }}>
       <a href="https://k9winaus.com/?aff=BOM">
-        <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[170px]" />
+        <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[180px]" />
         </a>
       </div>
     </div>
