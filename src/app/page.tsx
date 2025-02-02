@@ -48,9 +48,10 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="../app/globals.css" />
       </Head>
 
-      <div className="absolute top-0 left-0 w-[430px] h-[932px]" style={{margin: 0, padding: 0}}>
+      <div className="absolute top-0 left-0 w-[430px] h-[932px] overflow-hidden">
         <img src="/assets/bg1.png" alt="Background" className="w-full h-full z-20" />
       </div>
 
@@ -70,8 +71,6 @@ export default function Home() {
           <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[200px]" />
         </a>
       </div>
-     
-
     </div>
   );
 }
