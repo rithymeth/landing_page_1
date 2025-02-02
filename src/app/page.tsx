@@ -50,30 +50,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Background */}
-      <div className="relative w-full h-[100vh]">
-        <img
-          src="/assets/bg1.png"
-          alt="Background"
-          className="w-full h-full z-20"
-        />
+      <div className="absolute top-0 left-0 w-[430px] h-[932px]" style={{margin: 0, padding: 0}}>
+        <img src="/assets/bg1.png" alt="Background" className="w-full h-full z-20" />
       </div>
-      <div className="absolute top-0 left-0" style={{ zIndex: -10 }}>
+
+      <div className="absolute top-0 left-0 w-[255px] h-[180px]">
         <iframe
           src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
           className="w-[255px] h-[180px] rounded-lg mt-[260px] ml-[88px]" 
         ></iframe>
       </div>
-      <div className="absolute top-0 left-0" style={{ zIndex: 110 }}>
+      <div className="absolute top-0 left-0 w-[220px] h-[50px]">
         <a href="https://k9winaus.com/?aff=BOM">
           <img src="/assets/PLAYNOW.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px]" />
         </a>
-      </div>
-      <div className="absolute top-0 left-0" style={{ zIndex: 120 }}>
-      <a href="https://k9winaus.com/?aff=BOM">
-        <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[180px]" />
+      </div> 
+      <div className="absolute top-0 left-0 w-[220px] h-[50px]">
+        <a href="https://k9winaus.com/?aff=BOM">
+          <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[200px]" />
         </a>
       </div>
+     
+
     </div>
   );
 }
