@@ -65,13 +65,13 @@ export default function Home() {
         ></iframe>
       </div>
       <div className="absolute top-0 left-0" style={{ zIndex: 110 }}>
-        <a href="https://apps.apple.com/us/app/id6444188682">
-          <img src="/assets/PLAYNOW.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px]" />
+        <a href="https://k9winaus.com/?aff=BOM">
+          <img src="/assets/PLAYNOW.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[620px]" />
         </a>
       </div>
       <div className="absolute top-0 left-0" style={{ zIndex: 120 }}>
-      <a href="https://apps.apple.com/us/app/id6444188682">
-        <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[200px]" />
+      <a href="https://k9winaus.com/?aff=BOM">
+        <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[620px] ml-[170px]" />
         </a>
       </div>
     </div>
