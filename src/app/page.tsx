@@ -51,85 +51,28 @@ export default function Home() {
       </Head>
 
       {/* Background */}
-      <div className="relative w-full h-[100vh] z-0">
+      <div className="relative w-full h-[100vh]">
         <img
-          src="/assets/BG.png"
+          src="/assets/bg1.png"
           alt="Background"
-          className="w-full h-full z-0"
+          className="w-full h-full z-20"
         />
       </div>
-
-      {/* Logo */}
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/assets/logo.png" alt="Logo" className="mt-[20px] z-10" />
+      <div className="absolute top-0 left-0" style={{ zIndex: -10 }}>
+        <iframe
+          src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
+          className="w-[255px] h-[180px] rounded-lg mt-[260px] ml-[88px]" 
+        ></iframe>
       </div>
-
-      {/* You win image */}
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/assets/youwin.png" alt="You Win" className="mt-[50px] z-10" />
+      <div className="absolute top-0 left-0" style={{ zIndex: 110 }}>
+        <a href="https://apps.apple.com/us/app/id6444188682">
+          <img src="/assets/PLAYNOW.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px]" />
+        </a>
       </div>
-
-      {/* Frame and Video */}
-      <div className="absolute top-0 left-0 z-10">
-        <div className="flex justify-center items-center">
-          <img
-            src="/assets/FRAME.png"
-            alt="Frame"
-            className="w-[850px] h-[820px] mt-[50px]"
-            style={{ zIndex: 12 }}
-          />
-        </div>
-        <div className="flex justify-center items-center">
-          <iframe
-            src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
-            allow="autoplay"
-            className="w-[260px] h-[150px] mt-[-1055px] rounded-lg"
-          ></iframe>
-        </div>
-      </div>
-
-      {/* Text 2 */}
-      <div className="absolute top-0 left-0 w-full h-[100vh] z-20 flex justify-center items-center mt-2">
-        <img src="/assets/text 2.png" alt="Text 2" className="z-10" />
-      </div>
-
-      {/* Text 5 and Mobile */}
-      <div className="absolute top-0 left-0 w-full h-[100vh] z-20 flex justify-center items-center">
-        <div className="flex justify-center items-center mt-12">
-          <img src="/assets/text 5.png" alt="Text 5" className="z-10" />
-          <img
-            src="/assets/mobile.png"
-            alt="Mobile"
-            className="z-10 ml-[-400px]"
-          />
-        </div>
-      </div>
-
-      {/* Text 3 */}
-      <div className="absolute top-0 left-0 w-full h-[100vh] z-30 flex justify-center items-center mt-12">
-        <img
-          src="/assets/text 3.png"
-          alt="Text 3"
-          className="w-[800px] h-[800px] z-10"
-        />
-      </div>
-
-      {/* Text 4 */}
-      <div className="absolute top-0 left-0 w-full h-[100vh] z-30 flex justify-center items-center mt-8">
-        <img
-          src="/assets/text 4.png"
-          alt="Text 4"
-          className="w-[800px] h-[800px] z-10"
-        />
-      </div>
-
-      {/* Icon Game */}
-      <div className="absolute top-0 left-0 w-full h-[100vh] z-30 flex justify-center items-center mt-12">
-        <img
-          src="/assets/icon game.png"
-          alt="Icon Game"
-          className="w-[800px] h-[800px] z-10"
-        />
+      <div className="absolute top-0 left-0" style={{ zIndex: 120 }}>
+      <a href="https://apps.apple.com/us/app/id6444188682">
+        <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[200px]" />
+        </a>
       </div>
     </div>
   );
