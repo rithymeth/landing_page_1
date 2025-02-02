@@ -75,15 +75,16 @@ export default function Home() {
           <img
             src="/assets/FRAME.png"
             alt="Frame"
-            className="w-[850px] h-[800px] mt-[50px] z-10"
+            className="w-[850px] h-[820px] mt-[50px]"
+            style={{ zIndex: 12 }}
           />
         </div>
         <div className="flex justify-center items-center">
-          <video
-            src="/assets/video.mp4"
-            controls
-            className="w-[250px] h-[150px] z-100 mt-[-1030px]"
-          />
+          <iframe
+            src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
+            allow="autoplay"
+            className="w-[260px] h-[150px] mt-[-1055px] rounded-lg"
+          ></iframe>
         </div>
       </div>
 
