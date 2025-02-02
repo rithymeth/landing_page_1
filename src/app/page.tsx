@@ -1,101 +1,135 @@
-import Image from "next/image";
+"use client";
+
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  // null: unknown, true: mobile, false: desktop
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    // Function to check if the viewport width is within mobile range
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Run the check on mount
+    checkIsMobile();
+
+    // Update on window resize
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  // Until we determine the viewport size, don't render anything
+  if (isMobile === null) {
+    return null;
+  }
+
+  // If not mobile, show a fallback message
+  if (!isMobile) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <p className="text-2xl font-bold text-center text-black">
+          This site is only available on mobile devices.
+        </p>
+      </div>
+    );
+  }
+
+  // Mobile-only content
+  return (
+    <div className="relative">
+      <Head>
+        <title>My Next.js App</title>
+        <meta
+          name="description"
+          content="My Next.js app with layered images and video"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      {/* Background */}
+      <div className="relative w-full h-[100vh] z-0">
+        <img
+          src="/assets/BG.png"
+          alt="Background"
+          className="w-full h-full z-0"
+        />
+      </div>
+
+      {/* Logo */}
+      <div className="absolute top-0 left-0 z-10">
+        <img src="/assets/logo.png" alt="Logo" className="mt-[20px] z-10" />
+      </div>
+
+      {/* You win image */}
+      <div className="absolute top-0 left-0 z-10">
+        <img src="/assets/youwin.png" alt="You Win" className="mt-[50px] z-10" />
+      </div>
+
+      {/* Frame and Video */}
+      <div className="absolute top-0 left-0 z-10">
+        <div className="flex justify-center items-center">
+          <img
+            src="/assets/FRAME.png"
+            alt="Frame"
+            className="w-[850px] h-[800px] mt-[50px] z-10"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div className="flex justify-center items-center">
+          <video
+            src="/assets/video.mp4"
+            controls
+            className="w-[250px] h-[150px] z-100 mt-[-1030px]"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+        </div>
+      </div>
+
+      {/* Text 2 */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] z-20 flex justify-center items-center mt-2">
+        <img src="/assets/text 2.png" alt="Text 2" className="z-10" />
+      </div>
+
+      {/* Text 5 and Mobile */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] z-20 flex justify-center items-center">
+        <div className="flex justify-center items-center mt-12">
+          <img src="/assets/text 5.png" alt="Text 5" className="z-10" />
+          <img
+            src="/assets/mobile.png"
+            alt="Mobile"
+            className="z-10 ml-[-400px]"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
+
+      {/* Text 3 */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] z-30 flex justify-center items-center mt-12">
+        <img
+          src="/assets/text 3.png"
+          alt="Text 3"
+          className="w-[800px] h-[800px] z-10"
+        />
+      </div>
+
+      {/* Text 4 */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] z-30 flex justify-center items-center mt-8">
+        <img
+          src="/assets/text 4.png"
+          alt="Text 4"
+          className="w-[800px] h-[800px] z-10"
+        />
+      </div>
+
+      {/* Icon Game */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] z-30 flex justify-center items-center mt-12">
+        <img
+          src="/assets/icon game.png"
+          alt="Icon Game"
+          className="w-[800px] h-[800px] z-10"
+        />
+      </div>
     </div>
   );
 }
