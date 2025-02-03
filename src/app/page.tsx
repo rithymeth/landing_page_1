@@ -73,6 +73,15 @@ export default function Home() {
             />
           </a>
         </div>
+        <div className="absolute top-0 left-0 w-[60px] h-[60px] z-30">
+        <a href="https://direct.lc.chat/14776932/">
+          <img
+            src="/assets/ICON.gif"
+            alt="Download"
+            className="w-full h-full rounded-lg mt-[400px] ml-[360px]"
+          />
+        </a>
+      </div>
       </div>
     );
   }
@@ -122,6 +131,15 @@ export default function Home() {
             src="/assets/DOWNLOAD.gif"
             alt="Download"
             className="w-full h-full rounded-lg mt-[690px] ml-[1620px]"
+          />
+        </a>
+      </div>
+      <div className="absolute top-0 left-0 w-[100px] h-[100px] z-30">
+        <a href="https://direct.lc.chat/14776932/">
+          <img
+            src="/assets/ICON.gif"
+            alt="Download"
+            className="w-full h-full rounded-lg mt-[790px] ml-[1570px]"
           />
         </a>
       </div>
