@@ -106,7 +106,7 @@ export default function Home() {
       </div>
 
 
-      <div className="absolute top-0 left-0 w-[300px] h-[80px]">
+      <div className="absolute top-0 left-0 w-[300px] h-[80px] z-30">
         <a href="https://k9winaus.com/?aff=BOM">
           <img
             src="/assets/PLAYNOW.gif"
@@ -116,7 +116,7 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="absolute top-0 left-0 w-[300px] h-[80px]">
+      <div className="absolute top-0 left-0 w-[300px] h-[80px] z-30">
         <a href="https://k9winaus.com/?aff=BOM">
           <img
             src="/assets/DOWNLOAD.gif"
