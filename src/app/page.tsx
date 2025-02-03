@@ -26,49 +26,103 @@ export default function Home() {
     return null;
   }
 
-  // If not mobile, show a fallback message
-  if (!isMobile) {
+  // --------------------
+  // Mobile Content
+  // --------------------
+  if (isMobile) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <p className="text-2xl font-bold text-center text-black">
-          This site is only available on mobile devices.
-        </p>
+      <div className="relative bg-black">
+        <Head>
+          <title>My Next.js App - Mobile</title>
+          <meta name="description" content="My Next.js app with layered images and video for mobile" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="stylesheet" href="../app/globals.css" />
+        </Head>
+
+        {/* Background */}
+        <div className="absolute top-0 left-0 w-[430px] h-[932px] overflow-hidden">
+          <img src="/assets/bg1.png" alt="Background" className="w-full h-full z-20" />
+        </div>
+
+        {/* Video container with a lower z-index so it sits behind the background */}
+        <div className="absolute top-0 left-0 w-[255px] h-[220px] z-10">
+          <iframe
+            src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
+            className="w-[255px] h-[200px] rounded-lg mt-[260px] ml-[88px]"
+            title="Mobile Video"
+          ></iframe>
+        </div>
+
+        <div className="absolute top-0 left-0 w-[220px] h-[50px]">
+          <a href="https://k9winaus.com/?aff=BOM">
+            <img
+              src="/assets/PLAYNOW.gif"
+              alt="Play Now"
+              className="w-[220px] h-[50px] rounded-lg mt-[690px]"
+            />
+          </a>
+        </div>
+
+        <div className="absolute top-0 left-0 w-[220px] h-[50px]">
+          <a href="https://k9winaus.com/?aff=BOM">
+            <img
+              src="/assets/DOWNLOAD.gif"
+              alt="Download"
+              className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[200px]"
+            />
+          </a>
+        </div>
       </div>
     );
   }
 
-  // Mobile-only content
+  // --------------------
+  // Desktop Content
+  // --------------------
   return (
-    <div className="relative">
+    // Adding "relative" here ensures that the absolute children are positioned relative to this container.
+    <div className="relative bg-gray-100 min-h-screen">
       <Head>
-        <title>My Next.js App</title>
-        <meta
-          name="description"
-          content="My Next.js app with layered images and video"
-        />
+        <title>My Next.js App - Desktop</title>
+        <meta name="description" content="My Next.js app desktop version with enhanced design" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="../app/globals.css" />
       </Head>
 
-      <div className="absolute top-0 left-0 w-[430px] h-[932px] overflow-hidden">
-        <img src="/assets/bg1.png" alt="Background" className="w-full h-full z-20" />
+      <div className="relative bg-black w-[1920px] h-[1000px]">
+        {/* Background Image - Ensure this is on top */}
+        <img src="/assets/bgd.png" alt="Background" className="absolute top-0 left-0 w-full h-full z-20" />
+
+        {/* Video - Ensure this is behind the background */}
+        <div className="absolute top-0 left-0 w-[600px] h-[330px] z-10">
+          <iframe
+            src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
+            className="w-[600px] h-[340px] rounded-lg mt-[450px] ml-[660px]"
+            title="Desktop Video"
+          ></iframe>
+        </div>
       </div>
 
-      <div className="absolute top-0 left-0 w-[255px] h-[180px]">
-        <iframe
-          src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
-          className="w-[255px] h-[180px] rounded-lg mt-[260px] ml-[88px]" 
-        ></iframe>
-      </div>
-      <div className="absolute top-0 left-0 w-[220px] h-[50px]">
+
+      <div className="absolute top-0 left-0 w-[300px] h-[80px]">
         <a href="https://k9winaus.com/?aff=BOM">
-          <img src="/assets/PLAYNOW.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px]" />
+          <img
+            src="/assets/PLAYNOW.gif"
+            alt="Play Now"
+            className="w-full h-full rounded-lg mt-[690px] ml-[1320px]"
+          />
         </a>
-      </div> 
-      <div className="absolute top-0 left-0 w-[220px] h-[50px]">
+      </div>
+
+      <div className="absolute top-0 left-0 w-[300px] h-[80px]">
         <a href="https://k9winaus.com/?aff=BOM">
-          <img src="/assets/DOWNLOAD.gif" alt="Background" className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[200px]" />
+          <img
+            src="/assets/DOWNLOAD.gif"
+            alt="Download"
+            className="w-full h-full rounded-lg mt-[690px] ml-[1620px]"
+          />
         </a>
       </div>
     </div>
