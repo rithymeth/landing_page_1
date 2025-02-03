@@ -33,8 +33,8 @@ export default function Home() {
     return (
       <div className="relative bg-black">
         <Head>
-          <title>My Next.js App - Mobile</title>
-          <meta name="description" content="My Next.js app with layered images and video for mobile" />
+          <title>K9winaus</title>
+          <meta name="description" content="K9win" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="stylesheet" href="../app/globals.css" />
@@ -54,7 +54,7 @@ export default function Home() {
           ></iframe>
         </div>
 
-        <div className="absolute top-0 left-0 w-[220px] h-[50px]">
+        <div className="absolute top-0 left-0 w-[210px] h-[50px]">
           <a href="https://k9winaus.com/?aff=BOM">
             <img
               src="/assets/PLAYNOW.gif"
@@ -64,12 +64,12 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="absolute top-0 left-0 w-[220px] h-[50px]">
+        <div className="absolute top-0 left-0 w-[210px] h-[50px">
           <a href="https://k9winaus.com/?aff=BOM">
             <img
               src="/assets/DOWNLOAD.gif"
               alt="Download"
-              className="w-[220px] h-[50px] rounded-lg mt-[690px] ml-[200px]"
+              className="w-full h-full rounded-lg mt-[690px] ml-[210px]"
             />
           </a>
         </div>
@@ -78,7 +78,7 @@ export default function Home() {
           <img
             src="/assets/ICON.gif"
             alt="Download"
-            className="w-full h-full rounded-lg mt-[400px] ml-[360px]"
+            className="w-full h-full rounded-lg mt-[400px] ml-[350px]"
           />
         </a>
       </div>
