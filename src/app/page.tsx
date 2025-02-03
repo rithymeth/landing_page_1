@@ -37,15 +37,20 @@ export default function Home() {
           <meta name="description" content="K9win" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="../app/globals.css" />
+          {/* Adjust the stylesheet path as needed */}
+          <link rel="stylesheet" href="/globals.css" />
         </Head>
 
         {/* Background */}
         <div className="absolute top-0 left-0 w-[430px] h-[932px] overflow-hidden">
-          <img src="/assets/bg1.png" alt="Background" className="w-full h-full z-20" />
+          <img
+            src="/assets/bg1.png"
+            alt="Background"
+            className="w-full h-full z-20"
+          />
         </div>
 
-        {/* Video container with a lower z-index so it sits behind the background */}
+        {/* Video container */}
         <div className="absolute top-0 left-0 w-[255px] h-[220px] z-10">
           <iframe
             src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
@@ -64,7 +69,8 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="absolute top-0 left-0 w-[210px] h-[50px">
+        {/* Fixed the missing closing quote for the className below */}
+        <div className="absolute top-0 left-0 w-[210px] h-[50px]">
           <a href="https://k9winaus.com/?aff=BOM">
             <img
               src="/assets/DOWNLOAD.gif"
@@ -73,15 +79,16 @@ export default function Home() {
             />
           </a>
         </div>
+
         <div className="absolute top-0 left-0 w-[60px] h-[60px] z-30">
-        <a href="https://direct.lc.chat/14776932/">
-          <img
-            src="/assets/ICON.gif"
-            alt="Download"
-            className="w-full h-full rounded-lg mt-[400px] ml-[350px]"
-          />
-        </a>
-      </div>
+          <a href="https://direct.lc.chat/14776932/">
+            <img
+              src="/assets/ICON.gif"
+              alt="Icon"
+              className="w-full h-full rounded-lg mt-[400px] ml-[350px]"
+            />
+          </a>
+        </div>
       </div>
     );
   }
@@ -90,21 +97,27 @@ export default function Home() {
   // Desktop Content
   // --------------------
   return (
-    // Adding "relative" here ensures that the absolute children are positioned relative to this container.
     <div className="relative bg-gray-100 min-h-screen">
       <Head>
         <title>My Next.js App - Desktop</title>
-        <meta name="description" content="My Next.js app desktop version with enhanced design" />
+        <meta
+          name="description"
+          content="My Next.js app desktop version with enhanced design"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="../app/globals.css" />
+        <link rel="stylesheet" href="/globals.css" />
       </Head>
 
       <div className="relative bg-black w-[1920px] h-[1000px]">
-        {/* Background Image - Ensure this is on top */}
-        <img src="/assets/bgd.png" alt="Background" className="absolute top-0 left-0 w-full h-full z-20" />
+        {/* Background Image */}
+        <img
+          src="/assets/bgd.png"
+          alt="Background"
+          className="absolute top-0 left-0 w-full h-full z-20"
+        />
 
-        {/* Video - Ensure this is behind the background */}
+        {/* Video */}
         <div className="absolute top-0 left-0 w-[600px] h-[330px] z-10">
           <iframe
             src="https://embed.wave.video/svy0gzTRPesYKLX9?autoplay=1"
@@ -113,7 +126,6 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
-
 
       <div className="absolute top-0 left-0 w-[300px] h-[80px] z-30">
         <a href="https://k9winaus.com/?aff=BOM">
@@ -134,11 +146,12 @@ export default function Home() {
           />
         </a>
       </div>
+
       <div className="absolute top-0 left-0 w-[100px] h-[100px] z-30">
         <a href="https://direct.lc.chat/14776932/">
           <img
             src="/assets/ICON.gif"
-            alt="Download"
+            alt="Icon"
             className="w-full h-full rounded-lg mt-[790px] ml-[1570px]"
           />
         </a>
